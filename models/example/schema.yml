@@ -2,20 +2,27 @@
 version: 2
 
 models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+  - name: customers
+    description: "First customers dbt model"
     columns:
-      - name: id
+      - name: customer_id
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
+  - name: orders
+    description: "Second dbt model"
     columns:
-      - name: id
+      - name: order_id
         description: "The primary key for this table"
         tests:
           - unique
-          - not_null
+          - not_null     
+      - name: customer_id
+        description: "Customer id"
+        tests:
+        - not_null
+        relationships:
+          to: ref('customers')
+          field: customer_id
