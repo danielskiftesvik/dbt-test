@@ -1,0 +1,8 @@
+
+sources:
+  - name: external_source
+    meta:
+      external_location: 'C:\GitRepos\dbt-test\data.duckdb'
+    tables:
+      - name: customer
+      - name: project
