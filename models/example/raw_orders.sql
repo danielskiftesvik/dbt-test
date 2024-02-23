@@ -1,4 +1,4 @@
-with orders as (
+with raw_orders as (
     select 
     id as order_id,
     customer as customer_id,
@@ -10,4 +10,4 @@ with orders as (
     from read_csv('raw_data/raw_orders.csv')
 )
 
-select * from orders
+select * from raw_orders
